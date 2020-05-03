@@ -1,5 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+}
+
 .row{
     display: flex;
+    margin: 0 auto;
 }
 
 .cell{
@@ -10,6 +18,8 @@
 }
 
 .cross{
+    background-image: url(https://avatanplus.com/files/resources/mid/5968a2c8f2ed115d40bbe123.png);
+    background-size: 100%;
     background-color:red;
     width: 50px;
     height: 50px;
@@ -18,6 +28,10 @@
 }
 
 .zero{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Asexual_symbol.svg/2000px-Asexual_symbol.svg.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: blue;
     width: 50px;
     height: 50px;
