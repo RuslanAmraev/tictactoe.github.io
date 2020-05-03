@@ -1,3 +1,12 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(https://million-wallpapers.ru/wallpapers/2/91/433181811146655/chernyj-fon-otverstiya-ya.jpg);
+    color: #fff;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -15,6 +24,7 @@
     height: 75px;
     border: 1px solid #000;
     margin: 10px;
+    background-color: #fff;
 }
 
 .cross{
@@ -45,12 +55,14 @@
 }
 
 .restart-button{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: transparent;
     border: none;
     outline: none;
     margin: 20px;
+    background-color: #fff;
+    padding: 0;
 }
 
 .restart-button-image{
