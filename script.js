@@ -34,7 +34,7 @@ function statusChanger(el, who){
     if(rowNumber == 3){
         status.row_3[cellNumber - 1] = who
     }
-    winChecker()
+    setTimeout(winChecker, 1000) 
 }
 
 function winChecker(){
@@ -44,6 +44,7 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
     }
     if(status.row_2[0] == status.row_2[1] &&  status.row_2[1] == status.row_2[2] && status.row_2[0] != 0){
         if(status.row_2[0] == 1){
@@ -51,6 +52,7 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
     }
     if(status.row_3[0] == status.row_3[1] &&  status.row_3[1] == status.row_3[2] && status.row_3[0] != 0){
         if(status.row_3[0] == 1){
@@ -58,6 +60,7 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
     }
     if(status.row_1[0] == status.row_2[1] && status.row_2[1] == status.row_3[2] && status.row_3[2] != 0){
         if(status.row_1[0] == 1){
@@ -65,6 +68,7 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
     }
     if(status.row_1[2] == status.row_2[1] && status.row_2[1] == status.row_3[0] && status.row_3[0] != 0){
         if(status.row_1[2] == 1){
@@ -72,6 +76,7 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
     }
     if(status.row_1[0] == status.row_2[0] &&  status.row_2[0] == status.row_3[0] && status.row_1[0] != 0){
         if(status.row_1[0] == 1){
@@ -79,6 +84,7 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
     }
     if(status.row_1[1] == status.row_2[1] &&  status.row_2[1] == status.row_3[1] && status.row_1[1] != 0){
         if(status.row_1[1] == 1){
@@ -86,6 +92,7 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
     }
     if(status.row_1[2] == status.row_2[2] &&  status.row_2[2] == status.row_3[2] && status.row_1[2] != 0){
         if(status.row_1[2] == 1){
@@ -93,5 +100,28 @@ function winChecker(){
         }else{
             alert('ПОБЕДИЛИ НОЛИКИ')
         }
+        restart()
+    }
+}
+
+function restart(){
+    let crosses = document.getElementsByClassName('cross')
+    let zeros = document.getElementsByClassName('zero')
+    let a = 0
+    while( a < 3){
+        for (let i = 0; i < crosses.length; i++) {
+            crosses[i].className = 'cell'
+        }
+        a++
+    }
+    a = 0
+    while( a < 3){
+        for (let i = 0; i < zeros.length; i++) {
+            zeros[i].className = 'cell'
+        }
+        a++
+    }
+    for (key in status){
+        status[key] = [0,0,0]
     }
 }
