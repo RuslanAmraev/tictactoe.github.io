@@ -35,7 +35,17 @@ function cry(){
             who = 2
         }
         statusChanger(event.target, who)
+        setTurn()
     }   
+}
+
+function setTurn(){
+    if(turn == 0){
+        document.getElementsByName('turn')[0].innerHTML = 'Крестик'
+    }else{
+        document.getElementsByName('turn')[0].innerHTML = 'Нолик'
+    }
+    
 }
 
 function statusChanger(el, who){
