@@ -4,8 +4,19 @@ let status = {
     row_2:[0,0,0],
     row_3:[0,0,0]
 }
-let crossScore = 0
-let zeroScore = 0
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+let crossScore = getCookie('cross-score') || 0
+let zeroScore = getCookie('zero-score') || 0
+
+document.getElementsByName('cross-score')[0].innerHTML = crossScore
+document.getElementsByName('zero-score')[0].innerHTML = zeroScore
 
 function cry(){
     if(event.target.className == 'cell'){
@@ -136,12 +147,14 @@ function crossWin(){
     alert("Победили крестики!")
     crossScore++
     document.getElementsByName('cross-score')[0].innerHTML = crossScore
+    document.cookie = "crossScore=" + crossScore
 }
 
 function zeroWin(){
     alert("Победили нолики!")
     zeroScore++
     document.getElementsByName('zero-score')[0].innerHTML = zeroScore
+    document.cookie = "zeroScore=" + zeroScore
 }
 
 function resetScore(){
@@ -149,6 +162,6 @@ function resetScore(){
     zeroScore = 0
     document.getElementsByName('cross-score')[0].innerHTML = crossScore
     document.getElementsByName('zero-score')[0].innerHTML = zeroScore
+    document.cookie = "zeroScore="
+    document.cookie = "crossScore="
 }
-
-document.cookie = "score=" + crossScore
