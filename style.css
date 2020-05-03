@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: calc(100vh - 150px);
+    height: 700px;
 }
 
 .row{
@@ -11,8 +11,8 @@
 }
 
 .cell{
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     border: 1px solid #000;
     margin: 10px;
 }
@@ -21,8 +21,8 @@
     background-image: url(https://avatanplus.com/files/resources/mid/5968a2c8f2ed115d40bbe123.png);
     background-size: 100%;
     background-color:red;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     border: 1px solid #000;
     margin: 10px;
 }
@@ -33,8 +33,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: blue;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     border: 1px solid #000;
     margin: 10px;
 }
@@ -55,4 +55,5 @@
 
 .restart-button-image{
     width: 30px;
+    pointer-events: none;
 }

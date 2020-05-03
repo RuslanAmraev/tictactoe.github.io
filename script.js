@@ -1,10 +1,11 @@
 let turn = 0
-
 let status = {
     row_1:[0,0,0],
     row_2:[0,0,0],
     row_3:[0,0,0]
 }
+let crossScore = 0
+let zeroScore = 0
 
 function cry(){
     if(event.target.className == 'cell'){
@@ -40,66 +41,70 @@ function statusChanger(el, who){
 function winChecker(){
     if(status.row_1[0] == status.row_1[1] &&  status.row_1[1] == status.row_1[2] && status.row_1[0] != 0){
         if(status.row_1[0] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
         restart()
     }
     if(status.row_2[0] == status.row_2[1] &&  status.row_2[1] == status.row_2[2] && status.row_2[0] != 0){
         if(status.row_2[0] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
         restart()
     }
     if(status.row_3[0] == status.row_3[1] &&  status.row_3[1] == status.row_3[2] && status.row_3[0] != 0){
         if(status.row_3[0] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
         restart()
     }
     if(status.row_1[0] == status.row_2[1] && status.row_2[1] == status.row_3[2] && status.row_3[2] != 0){
         if(status.row_1[0] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
         restart()
     }
     if(status.row_1[2] == status.row_2[1] && status.row_2[1] == status.row_3[0] && status.row_3[0] != 0){
         if(status.row_1[2] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
         restart()
     }
     if(status.row_1[0] == status.row_2[0] &&  status.row_2[0] == status.row_3[0] && status.row_1[0] != 0){
         if(status.row_1[0] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
         restart()
     }
     if(status.row_1[1] == status.row_2[1] &&  status.row_2[1] == status.row_3[1] && status.row_1[1] != 0){
         if(status.row_1[1] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
         restart()
     }
     if(status.row_1[2] == status.row_2[2] &&  status.row_2[2] == status.row_3[2] && status.row_1[2] != 0){
         if(status.row_1[2] == 1){
-            alert('КРЕСТИКИ ПОБЕДИЛИ!')
+            crossWin()
         }else{
-            alert('ПОБЕДИЛИ НОЛИКИ')
+            zeroWin()
         }
+        restart()
+    }
+    if((document.getElementsByClassName('cross').length - 0) + (document.getElementsByClassName('zero').length - 0) == 9){
+        alert('НИЧЬЯ')
         restart()
     }
 }
@@ -108,6 +113,7 @@ function restart(){
     let crosses = document.getElementsByClassName('cross')
     let zeros = document.getElementsByClassName('zero')
     let a = 0
+    turn = 0
     while( a < 3){
         for (let i = 0; i < crosses.length; i++) {
             crosses[i].className = 'cell'
@@ -124,4 +130,23 @@ function restart(){
     for (key in status){
         status[key] = [0,0,0]
     }
+}
+
+function crossWin(){
+    alert("Победили крестики!")
+    crossScore++
+    document.getElementsByName('cross-score')[0].innerHTML = crossScore
+}
+
+function zeroWin(){
+    alert("Победили нолики!")
+    zeroScore++
+    document.getElementsByName('zero-score')[0].innerHTML = zeroScore
+}
+
+function resetScore(){
+    crossScore = 0
+    zeroScore = 0
+    document.getElementsByName('cross-score')[0].innerHTML = crossScore
+    document.getElementsByName('zero-score')[0].innerHTML = zeroScore
 }

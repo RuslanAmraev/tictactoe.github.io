@@ -8,8 +8,12 @@
 </head>
 <body>
     <div class="header">
-        <h1>КРЕСТИКИ-НОЛИКИ</h1>
-        <button onclick="restart()" class="restart-button"><img class="restart-button-image" src="https://vectorified.com/images/restart-icon-1.png"></button>
+        <div>
+            <h1>Счёт:</h1>
+            <h2>КРЕСТИКИ - <output name="cross-score">0</output></h2>
+            <h2>НОЛИКИ - <output name="zero-score">0</output></h2>
+        </div>
+        <button onclick="restart(), resetScore()" class="restart-button"><img class="restart-button-image" src="https://vectorified.com/images/restart-icon-1.png"></button>
     </div>
     <div class="container">
         <div class="row" id="row-1">
