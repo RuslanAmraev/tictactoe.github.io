@@ -162,6 +162,6 @@ function resetScore(){
     zeroScore = 0
     document.getElementsByName('cross-score')[0].innerHTML = crossScore
     document.getElementsByName('zero-score')[0].innerHTML = zeroScore
-    document.cookie = "zeroScore="
-    document.cookie = "crossScore="
+    document.cookie = "zeroScore=0"
+    document.cookie = "crossScore=0"
 }
