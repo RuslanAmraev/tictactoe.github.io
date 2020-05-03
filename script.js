@@ -150,3 +150,5 @@ function resetScore(){
     document.getElementsByName('cross-score')[0].innerHTML = crossScore
     document.getElementsByName('zero-score')[0].innerHTML = zeroScore
 }
+
+document.cookie = "score=" + crossScore
