@@ -178,4 +178,5 @@ function resetScore(){
     document.getElementsByName('zero-score')[0].innerHTML = zeroScore
     document.cookie = "zeroScore=0"
     document.cookie = "crossScore=0"
+    setTurn()
 }
