@@ -155,6 +155,7 @@ function restart(){
     for (key in status){
         status[key] = [0,0,0]
     }
+    setTurn()
 }
 
 function crossWin(){
