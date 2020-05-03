@@ -15,6 +15,10 @@ function getCookie(name) {
 let crossScore = getCookie('cross-score') || 0
 let zeroScore = getCookie('zero-score') || 0
 
+console.log(getCookie('cross-score'))
+console.log(getCookie('zero-score'))
+
+
 document.getElementsByName('cross-score')[0].innerHTML = crossScore
 document.getElementsByName('zero-score')[0].innerHTML = zeroScore
 
